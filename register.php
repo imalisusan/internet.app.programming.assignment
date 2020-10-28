@@ -27,26 +27,35 @@
                         <input type="text" id="fname" name="fullname" class="input" required >
                     </div>
                 </div>
-                <div class="input-div one">    
+                <div class="input-div one">  
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>   
                     <div>
                         <h5>Email</h5>
                         <input type="email" id="email" name="email" class="input" required>
                     </div>
                 </div>
-                <div class="input-div one">    
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>     
                     <div>
                         <h5>Address</h5>
                         <input type="text" id="address" name="address" class="input" required>
                     </div>
                 </div>
-                <div class="input-div one">    
+                <div class="input-div one">  
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>   
                     <div>
                         <h5>City</h5>
-                        <input class="input" type="text">
+                        <input type="text" class="input" id="city" name="city"  required>
                         
                     </div>
                 </div>
-                <div class="input-div two">
+                <div class="input-div five">
                     <div class="i">
                         <i class="fas fa-lock"></i>
                     </div>     
