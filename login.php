@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <title>Login</title>
 </head>
 <body>
+ <!--Navigation Menu-->
+        <nav>      
+            <ul> 
+                <li><a href="homepage.php">Home</a></li>
+                <li><a href="login.php" class="active">LogIn</a></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="homepage.php#header_footer">Contact </a></li>        
+            </ul>
+        </nav>
     <img class="wave" src="img/wave.png" alt="">
     <div class="container">
         <div class="img">
@@ -16,8 +24,6 @@
         </div>
         <div class="login-container">
             <form action="processlogin.php" method="POST">
-                <img class="avatar" src="img/avatar.svg" alt="">
-                <h2>Welcome</h2>
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>

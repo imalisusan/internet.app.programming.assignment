@@ -70,7 +70,7 @@
                 $stm = $pdo->prepare("insert into users (full_name, email, address, city, password) values(?,?,?,?,?)");
                 $stm->execute([$this->getFullName(),$this->getEmail(),$this->getAddress(),$this->getCity(),$hashedPassword]);
                 $stm = null;
-                return "Registration was successful";
+                header("Location: http:login.php");
             }catch (PDOException $ex){
                 return $ex->getMessage();
             }
@@ -79,18 +79,24 @@
         public function login($pdo) {
             try
             {
-                $stmt = $pdo->prepare("SELECT password FROM users WHERE email=?");
+                $stmt = $pdo->prepare("SELECT * FROM users WHERE email=?");
                 $stmt->execute([$this->email]);
-                $row = $stmt->fetch();
-                if($row == null)
+                $rows = $stmt->fetch();
+                if($rows == null)
                 {
                     return "This account does not exist";
                 }
                 else
                 {
-                    if (password_verify($this->password,$row['password']))
+                    if (password_verify($this->password,$rows['password']))
                     {
-                        return "Redirecting you to homepage...";
+                        setcookie('email', $this->email, time()+60*60+7);
+                        session_start();
+                        $_SESSION['email'] = $this->email;
+                        $_SESSION['name'] = $rows['full_name'];
+                        $_SESSION['address'] = $rows['address'];
+                        $_SESSION['city'] = $rows['city'];
+                        header("Location: http:profile.php");
                     }
                     else
                     {
@@ -117,12 +123,12 @@
                 {
                     if (password_verify($this->password,$row['password']))
                     {
-                        //Start changing your password
                         $hashedPassword = password_hash($this->getNewPassword(), PASSWORD_DEFAULT);
                         $stm = $pdo->prepare("UPDATE `users` SET `password` =  ? ");
                         $stm->execute([$hashedPassword]);
                         $stm = null;
                         return "Password changed successfully";
+                        header("Location: http:login.php");
                     }
                     else
                     {
@@ -136,7 +142,17 @@
             };       
         }
         public function logout ($pdo){
-           
+            session_start();
+            session_destroy();
+            header("Location: http:login.php");
+        }
+
+        public function fetchData($pdo){
+
+        }
+
+        public function updateData($pdo){
+
         }
     } 
 

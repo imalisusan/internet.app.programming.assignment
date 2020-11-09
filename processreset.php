@@ -2,7 +2,8 @@
 
     include_once './db.php';	
     include_once './user.php';
-    $email = $_POST['email'];
+    session_start();
+    $email = $_SESSION['email'];
     $password = $_POST['password'];
     $newPassword = $_POST['new'];
     $confirmNewPassword = $_POST['confirm']; 

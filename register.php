@@ -9,6 +9,15 @@
     <title>Register</title>
 </head>
 <body>
+    <!--Navigation Menu-->
+    <nav>      
+            <ul> 
+                <li><a href="homepage.php">Home</a></li>
+                <li><a href="login.php">LogIn</a></li>
+                <li><a href="register.php" class="active">Register</a></li>
+                <li><a href="homepage.php#header_footer">Contact </a></li>        
+            </ul>
+        </nav>
     <img class="wave" src="img/wave.png" alt="">
     <div class="container">
         <div class="img">
@@ -16,8 +25,6 @@
         </div>
         <div class="login-container">
             <form action="processregister.php" method="POST">
-                <img class="avatar" src="img/avatar.svg" alt="">
-                <h5>Welcome</h5>
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>

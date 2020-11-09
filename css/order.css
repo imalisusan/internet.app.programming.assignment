@@ -1,4 +1,9 @@
 @import url("basic.css");
+*
+{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 .wave
 {
     position: fixed;

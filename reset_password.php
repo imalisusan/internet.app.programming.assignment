@@ -1,3 +1,7 @@
+<?php 
+session_start();
+$email = $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +13,15 @@
     <title>Reset Password</title>
 </head>
 <body>
+    <!--Navigation Menu-->
+    <nav>      
+            <ul> 
+                <li><a href="homepage.php">Home</a></li>
+                <li><a href="profile.php">Profile</a></li>  
+                <li><a href="profile.php" class="active">Reset Password</a></li>  
+                <li><a href="logout.php">Logout</a></li>     
+            </ul>
+        </nav>
     <img class="wave" src="img/wave.png" alt="">
     <div class="container">
         <div class="img">
@@ -16,17 +29,6 @@
         </div>
         <div class="login-container">
             <form action="processreset.php" method="POST">
-                <img class="avatar" src="img/avatar.svg" alt="">
-                <h2>Welcome</h2>
-                <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>     
-                    <div>
-                        <h5>Email</h5>
-                        <input class="input" type="email" name="email">
-                    </div>
-                </div>
                 <div class="input-div two">
                     <div class="i">
                         <i class="fas fa-lock"></i>
